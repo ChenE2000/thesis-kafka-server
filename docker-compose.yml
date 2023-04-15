@@ -6,6 +6,7 @@ networks:
 
 services:
   zookeeper:
+    restart: always
     image: 'bitnami/zookeeper:latest'
     networks:
       - app-tier
@@ -16,6 +17,7 @@ services:
 
 
   kafka:
+    restart: always
     image: 'bitnami/kafka:latest'
     networks:
       - app-tier
@@ -34,6 +36,7 @@ services:
 
 
   server:
+    restart: always
     image: 'kafka-server'
     networks:
       - app-tier
