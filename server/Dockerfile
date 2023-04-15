@@ -8,3 +8,5 @@ COPY requirements.txt /app
 RUN pip3 install -r requirements.txt -i https://pypi.doubanio.com/simple --trusted-host pypi.doubanio.com
 
 COPY . /app
+
+CMD bash start-server.sh

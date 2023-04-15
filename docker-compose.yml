@@ -37,7 +37,11 @@ services:
 
   server:
     restart: always
-    image: 'kafka-server'
+    # image: 'kafka-server'
+    container_name: 'kafka-server'
+    build:
+      dockerfile: Dockerfile
+      context: ./server/
     networks:
       - app-tier
     ports:
@@ -45,5 +49,3 @@ services:
     depends_on:
       - zookeeper
       - kafka
-
-    command: ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
