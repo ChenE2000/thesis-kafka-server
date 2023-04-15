@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from KafkaContext import kafkaContext
 from fastapi import FastAPI
 
-app = FastAPI()
+app = FastAPI(title="kafka-server", description="kafka-server", version="0.1.0")
 
 
 class Message(BaseModel):  # 继承了BaseModel，定义了People的数据格式
